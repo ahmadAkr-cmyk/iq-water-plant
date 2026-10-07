@@ -2,10 +2,10 @@ import { defineConfig } from "tsup";
 
 export default defineConfig({
   entry: {
-    main: "electron/main.ts",
-    preload: "electron/preload.ts",
-    database: "electron/database.ts",
-    handlers: "electron/handlers.ts",
+    main: "backend/main.ts",
+    preload: "backend/preload.ts",
+    database: "backend/database.ts",
+    handlers: "backend/handlers.ts",
   },
   outDir: "dist-electron",
   format: ["cjs"],

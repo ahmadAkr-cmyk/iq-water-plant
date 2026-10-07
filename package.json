@@ -16,7 +16,7 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p backend/tsconfig.json",
     "build:electron-renderer": "vite build --config vite.electron.config.ts",
     "build:electron-main": "tsup",
     "build:electron": "npm run build:electron-renderer && npm run build:electron-main",
