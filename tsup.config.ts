@@ -4,6 +4,8 @@ export default defineConfig({
   entry: {
     main: "electron/main.ts",
     preload: "electron/preload.ts",
+    database: "electron/database.ts",
+    handlers: "electron/handlers.ts",
   },
   outDir: "dist-electron",
   format: ["cjs"],

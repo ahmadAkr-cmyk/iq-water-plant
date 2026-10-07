@@ -92,7 +92,15 @@ function SettingsPage() {
       <Card className="flex items-center justify-between">
         <div><h3 className="text-[1.2rem] font-bold text-deep">Backup</h3>
           <p className="text-muted-foreground">Last backup: {s.lastBackupAt ? fmtDateTime(s.lastBackupAt) : "Abhi tak nahi"}</p></div>
-        <Button size="lg" onClick={async () => { const r = await api.createBackup(); setS({ ...s, lastBackupAt: r.at }); refreshSettings(); toast.success("Backup ban gaya"); }}><DatabaseBackup /> Backup abhi lo</Button>
+        <div className="flex items-center gap-3">
+          {typeof window !== "undefined" && !!(window as any).electronAPI && (
+            <Button variant="outline" size="lg" onClick={async () => {
+              const r = await (window as any).electronAPI.invoke("pickBackupFolder", {});
+              if (r?.data?.ok) toast.success(`Extra backup folder: ${r.data.path}`);
+            }}><DatabaseBackup /> USB/Drive folder</Button>
+          )}
+          <Button size="lg" onClick={async () => { const r = await api.createBackup(); setS({ ...s, lastBackupAt: r.at }); refreshSettings(); toast.success("Backup ban gaya"); }}><DatabaseBackup /> Backup abhi lo</Button>
+        </div>
       </Card>
     </div>
   );

@@ -9,7 +9,7 @@ contextBridge.exposeInMainWorld("electronAPI", {
       "updateProduct", "createSale", "listSales", "getSale", "cancelSale",
       "getLedger", "addPayment", "addAdvance", "getDashboard", "getReport",
       "getReceivables", "getSettings", "saveSettings", "createBackup",
-      "exportReport", "openWhatsApp"
+      "exportReport", "openWhatsApp", "pickBackupFolder"
     ];
     if (validChannels.includes(channel)) {
       return ipcRenderer.invoke(channel, data);
