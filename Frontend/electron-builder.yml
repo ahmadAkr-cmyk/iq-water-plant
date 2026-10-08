@@ -1,0 +1,17 @@
+appId: com.iqwaterland.app
+productName: IQ Waterland
+directories:
+  output: release/
+  buildResources: build
+files:
+  - dist-renderer/**/*
+  - dist-electron/**/*
+  - package.json
+win:
+  target: nsis
+  icon: public/favicon.ico
+nsis:
+  oneClick: false
+  perMachine: true
+  allowToChangeInstallationDirectory: true
+  shortcutName: IQ Waterland
