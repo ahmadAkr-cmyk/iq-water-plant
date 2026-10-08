@@ -1,5 +1,6 @@
 {
   "name": "iq-waterland",
+  "//": "do not rename, it defines the userData folder that holds billing.db",
   "version": "1.0.0",
   "description": "IQ Waterland — Offline billing and khata app for water plants",
   "author": "IQ Waterland",

@@ -80,7 +80,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 function RootShell({ children }: { children: ReactNode }) {
   // In Electron SPA mode (hash routing or no SSR environment), we don't need the HTML shell
   // because electron-index.html already provides it.
-  const isElectronSPA = typeof window !== "undefined" && window.location.hash.startsWith("#");
+  const isElectronSPA =
+    typeof window !== "undefined" &&
+    (window.location.protocol === "app:" || window.location.hash.startsWith("#"));
   if (isElectronSPA) {
     return <>{children}</>;
   }
