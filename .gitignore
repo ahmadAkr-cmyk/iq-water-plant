@@ -35,3 +35,8 @@ dist-ssr
 dist-electron
 dist-renderer
 release
+node_modules
+.env
+dist
+dist-electron
+build
