@@ -1,3 +1,4 @@
+// @vitest-environment node
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { initDatabase, type DB } from "./database";
 import { registerHandlers } from "./handlers";
@@ -40,7 +41,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-  db.close();
+  if (db) db.close();
   fs.rmSync(tempDir, { recursive: true, force: true });
 });
 

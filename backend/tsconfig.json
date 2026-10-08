@@ -5,6 +5,7 @@
     "moduleResolution": "Bundler",
     "lib": ["ES2022"],
     "types": ["node", "vitest/globals"],
+    "typeRoots": ["../Frontend/node_modules/@types", "../Frontend/node_modules"],
     "skipLibCheck": true,
     "strict": true,
     "noImplicitAny": false,
@@ -17,7 +18,7 @@
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": false,
     "paths": {
-      "@/*": ["../src/*"]
+      "@/*": ["../Frontend/src/*"]
     }
   },
   "include": ["**/*.ts"]
