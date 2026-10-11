@@ -1,3 +1,4 @@
+// WARNING: Never rename package.json name "iq-waterland"; it defines the userData folder that holds billing.db.
 import {
   app,
   BrowserWindow,
