@@ -7,15 +7,27 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies and builds
 node_modules
 dist
+build
+dist-electron
+dist-renderer
+release
 dist-ssr
 .output
 .vinxi
-.tanstack/**
+.tanstack/
 .nitro
 *.local
 .env
+*.db
+*.db-wal
+*.db-shm
+billing.db
+backups/
+dev-demo.db
+Daily Reports
 
 # Wrangler / Cloudflare
 .wrangler/
@@ -31,9 +43,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Electron
-dist-electron
-dist-renderer
-release
-billing.db
