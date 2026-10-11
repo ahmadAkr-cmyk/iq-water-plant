@@ -44,6 +44,9 @@
 - The git root is the canonical project.
 - `backend/` is the only backend folder that root tooling should reference.
 - `Frontend/` is a duplicate copy kept only until root-based gates pass and it can be removed safely.
+- `better-sqlite3` ships a native `.node` binary that must be compiled for the ABI of whichever runtime loads it — Node.js for tests, Electron for the app.
+- `pretest` rebuilds for Node (so `npm test` always works); `electron:dev` runs `electron-builder install-app-deps` first to rebuild for Electron.
+- Never run `npm test` and any `electron:` command in parallel; they would race to overwrite each other's binary.
 
 ## Warning
 
